@@ -22,3 +22,33 @@ The cryptographic keys for signing are attached to the ''Signing Key for Bintray
 
 Avatar images and logos used on different web sites related to this organization are stored at the sub directory [editorial/resources
 ](resources). The avatar images are used especially at the [Bintray reposotries](https://bintray.com/javaposworkinggroup/maven). 
+
+## Manual Import Process of The Historic Sources
+
+The *build.gradle* files are prepared to import the historic sources from http://javapos.com.
+The following steps has been applied for importing:
+- as precondition, the variable *javaposImportDir* must be set in user's *gradle.properties* file pointing to the directory where the source zip file has been downloaded to (one time task)
+```
+# for JavaPOS committee file import only
+javaposImportDir=C:/Users/denis.kuniss/Documents/JavaPOS-Import
+```
+- download the appropriate source zip file from hhtp://javapos.com
+- adapt the date part *yyyymmdd* of the zip file into at Gradle task *importSources*
+```
+	def javaposSourceZipFile ="$javaposImportDir/JavaPOS-$version-Source-yyyymmdd.zip"
+```
+- go to the top and adapt the project's UnifiedPOS and release version variables
+```
+def uposVersion = '1.14'
+version="${uposVersion}.0" // the last part after dot is the build/release version
+```
+- adapt the JavaPOS dependency versions, if any
+```
+// dependency versions
+def javaposContractsVersion = "$uposVersion.0"
+def javaposControlsVersion  = "$uposVersion.0"
+def jclVersion = '2.2.0'
+```
+- execute task *importSources*
+- execute task *addLicenseHeader* which will add the comittee agreed [CPL license](http://www.ibm.com/developerworks/library/os-cpl.html) header to all imported source files
+- commit the changes
