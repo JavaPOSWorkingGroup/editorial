@@ -3,7 +3,7 @@ This project contains editorial information about how projects, build and releas
 
 ## Release Process
 
-The release process of the libraries is described in detail on Denis' blog article ["How To Set Up a Continuous Integration Process in the Cloud"](http://blog.grammarcraft.de/2016/04/23/set-up-a-continuous-integration-process-in-the-cloud/).
+The release process of the libraries is described in detail on Denis' blog article ["How To Set Up a Continuous Integration Process in the Cloud"](http://blog.grammarcraft.de/2016/04/23/set-up-a-continuous-integration-process-in-the-cloud/). However since that it was adapted to run on GitHub Actions as Travis-CI is not for free anymore.
 
 ## Passwords and Keys
 
@@ -14,14 +14,14 @@ The password to this Keepass database file is known to the committee members; in
 The passwords for release process relevant steps are stored in the root of the Keepass database.
 ![Keepass main page](resources/screenshots/Keepass-JavaPOSWorkingGroup.png)
 
-The cryptographic keys for signing are attached to the ''Signing Key for Bintray'' Keepass database entry.
+The cryptographic keys for signing are attached to the ''Passphrase for build@javapos.org Signing Key'' Keepass database entry.
 ![cryptograpic key files for signing](resources/screenshots/Keepass-key-files-attachements.png)
 
 
 ## Image Resources
 
 Avatar images and logos used on different web sites related to this organization are stored at the sub directory [editorial/resources
-](resources). The avatar images are used especially at the [Bintray reposotries](https://bintray.com/javaposworkinggroup/maven). 
+](resources). The avatar images are used especially at the [Bintray repositories](https://bintray.com/javaposworkinggroup/maven). 
 
 ## Manual Import Process of The Historic Sources
 
